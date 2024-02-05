@@ -1,0 +1,26 @@
+import pandas as pd
+dataframe=pd.read_csv('loan_data_set.csv')
+dataframe
+dataframe.head()
+dataframe.tail()
+dataframe.info()
+len(dataframe)
+dataframe['Gender'].unique()
+dataframe['Gender'].fillna(dataframe['Gender'].mode()[0],inplace=True)
+dataframe['Gender']
+dataframe['Gender'].unique()
+dataframe.dropna(subset='Married',inplace=True)
+dataframe.info()
+dataframe['Dependents'].unique()
+dataframe['Dependents'].fillna(dataframe['Dependents'].mode()[0],inplace=True)
+dataframe['Self_Employed'].fillna(dataframe['Self_Employed'].mode()[0],inplace=True)
+dataframe.info()
+dataframe['LoanAmount'].fillna(round(dataframe['LoanAmount'].mean(),0),inplace=True)
+dataframe['Credit_History'].fillna(dataframe['Credit_History'].mode()[0],inplace=True)
+dataframe['Loan_Amount_Term'].fillna(round(dataframe['Loan_Amount_Term'].mean(),0),inplace=True)
+dataframe.info()
+dataframe[['Education','Gender']].count()
+dataframe.drop_duplicates()
+dataframe.groupby(['Gender','Married']).count()
+dataframe.loc[0:2]
+dataframe.iloc[0:2,0:2]
